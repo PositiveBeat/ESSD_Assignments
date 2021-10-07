@@ -1,0 +1,344 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0xCFE4333CFA86FF2",
+      "device": "xc7z020clg400-1",
+      "gen_directory": "../../../../As1_Group6.gen/sources_1/bd/design_1",
+      "name": "design_1",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2021.1.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "tx_mod_0": "",
+      "uart_loop_mod_0": "",
+      "clk_divider_0": "",
+      "constant_repeater_0": ""
+    },
+    "ports": {
+      "sysclk": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "ASSOCIATED_RESET": {
+            "value": "rst",
+            "value_src": "default"
+          },
+          "CLK_DOMAIN": {
+            "value": "design_1_clk_0",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "default"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
+          }
+        }
+      },
+      "rst": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default"
+          }
+        }
+      },
+      "sout": {
+        "direction": "O"
+      },
+      "LED_0": {
+        "type": "data",
+        "direction": "O",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      }
+    },
+    "components": {
+      "tx_mod_0": {
+        "vlnv": "xilinx.com:module_ref:tx_mod:1.0",
+        "xci_name": "design_1_tx_mod_0_0",
+        "xci_path": "ip\\design_1_tx_mod_0_0\\design_1_tx_mod_0_0.xci",
+        "inst_hier_path": "tx_mod_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "tx_mod",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clkfast": {
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "default_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "default_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "design_1_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "data_in": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "shift_load": {
+            "direction": "I"
+          },
+          "sout": {
+            "direction": "O"
+          },
+          "xmitmt": {
+            "direction": "O"
+          }
+        }
+      },
+      "uart_loop_mod_0": {
+        "vlnv": "xilinx.com:module_ref:uart_loop_mod:1.0",
+        "xci_name": "design_1_uart_loop_mod_0_0",
+        "xci_path": "ip\\design_1_uart_loop_mod_0_0\\design_1_uart_loop_mod_0_0.xci",
+        "inst_hier_path": "uart_loop_mod_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "uart_loop_mod",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clkfast": {
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "default_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "default_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "design_1_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "data_out": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "intr": {
+            "type": "intr",
+            "direction": "I",
+            "parameters": {
+              "SENSITIVITY": {
+                "value": "LEVEL_HIGH",
+                "value_src": "constant"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "xmitmt": {
+            "direction": "I"
+          },
+          "data_in": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "shift_load": {
+            "direction": "O"
+          }
+        }
+      },
+      "clk_divider_0": {
+        "vlnv": "xilinx.com:module_ref:clk_divider:1.0",
+        "xci_name": "design_1_clk_divider_0_0",
+        "xci_path": "ip\\design_1_clk_divider_0_0\\design_1_clk_divider_0_0.xci",
+        "inst_hier_path": "clk_divider_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "clk_divider",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "design_1_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "clk_div": {
+            "direction": "O",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "default_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "default_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "design_1_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          }
+        }
+      },
+      "constant_repeater_0": {
+        "vlnv": "xilinx.com:module_ref:constant_repeater:1.0",
+        "xci_name": "design_1_constant_repeater_0_0",
+        "xci_path": "ip\\design_1_constant_repeater_0_0\\design_1_constant_repeater_0_0.xci",
+        "inst_hier_path": "constant_repeater_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "constant_repeater",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "default_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "default_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "design_1_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "data_out": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "intr": {
+            "type": "intr",
+            "direction": "O",
+            "parameters": {
+              "SENSITIVITY": {
+                "value": "LEVEL_HIGH",
+                "value_src": "constant"
+              }
+            }
+          }
+        }
+      }
+    },
+    "nets": {
+      "clk_divider_0_clk_div": {
+        "ports": [
+          "clk_divider_0/clk_div",
+          "tx_mod_0/clkfast",
+          "uart_loop_mod_0/clkfast",
+          "constant_repeater_0/clk"
+        ]
+      },
+      "constant_repeater_0_data_out": {
+        "ports": [
+          "constant_repeater_0/data_out",
+          "uart_loop_mod_0/data_out"
+        ]
+      },
+      "constant_repeater_0_intr": {
+        "ports": [
+          "constant_repeater_0/intr",
+          "uart_loop_mod_0/intr",
+          "LED_0"
+        ]
+      },
+      "rst_0_1": {
+        "ports": [
+          "rst",
+          "tx_mod_0/rst",
+          "uart_loop_mod_0/rst",
+          "clk_divider_0/rst"
+        ]
+      },
+      "sysclk_1": {
+        "ports": [
+          "sysclk",
+          "clk_divider_0/clk"
+        ]
+      },
+      "tx_mod_0_sout": {
+        "ports": [
+          "tx_mod_0/sout",
+          "sout"
+        ]
+      },
+      "tx_mod_0_xmitmt": {
+        "ports": [
+          "tx_mod_0/xmitmt",
+          "uart_loop_mod_0/xmitmt"
+        ]
+      },
+      "uart_loop_mod_0_data_in": {
+        "ports": [
+          "uart_loop_mod_0/data_in",
+          "tx_mod_0/data_in"
+        ]
+      },
+      "uart_loop_mod_0_shift_load": {
+        "ports": [
+          "uart_loop_mod_0/shift_load",
+          "tx_mod_0/shift_load"
+        ]
+      }
+    }
+  }
+}
