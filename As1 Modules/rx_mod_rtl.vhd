@@ -29,7 +29,8 @@ ARCHITECTURE rtl OF rx_mod IS
 	signal rxreg: std_logic_vector(9 downto 0);
   	signal count: unsigned (3 downto 0);
   	signal rxmt: std_logic;
-  	signal rxin,start_flag: std_logic;
+  	signal rxin: std_logic;
+  	signal start_flag: std_logic;
 	begin
   		process (clk, rst)
   			begin
@@ -41,13 +42,13 @@ ARCHITECTURE rtl OF rx_mod IS
 	  				rxin <= '1';
 					start_flag<='0';
 				elsif (rising_edge(clk)) then
-					rxin<=sin;
+					rxin <= sin;
 	  				if (rxmt = '1' and rxin = '0') then
 						count <= (others => '0');
 						rxmt <= '0';
 						rxreg <= (others => '1');
 						start_flag<='0';
-	  				elsif (count = 7 and rxmt = '0' and rxin = '0' and start_flag='0') then
+	  				elsif (count = 7 and rxmt = '0' and rxin = '0' and start_flag = '0') then
 	    				rxreg <= rxin & rxreg(9 downto 1);
 						count <= (others => '0');
 						start_flag<='1';
