@@ -6,6 +6,7 @@ USE ieee.std_logic_arith.all;
 entity constant_repeater is
     Port ( clk      : in std_logic;
            en       : in std_logic;
+           data     : in std_logic_vector (7 downto 0);
            data_out : out STD_LOGIC_VECTOR (7 downto 0);
            intr     : out STD_LOGIC);
 end constant_repeater;
@@ -31,6 +32,6 @@ begin
     
     end process;
 
-data_out <= const;
+data_out <= data;
 
 end Behavioral;
