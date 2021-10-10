@@ -1,29 +1,60 @@
 {
    "ActiveEmotionalView":"Default View",
-   "Default View_ScaleFactor":"0.834409",
-   "Default View_TopLeft":"-87,-114",
-   "ExpandedHierarchyInLayout":"",
+   "Default View_ScaleFactor":"1.23007",
+   "Default View_TopLeft":"849,43",
+   "ExpandedHierarchyInLayout":"/UART|/SPI",
    "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS
 #  -string -flagsOSRD
-preplace port port-id_sysclk -pg 1 -lvl 0 -x 0 -y 190 -defaultsOSRD
-preplace port port-id_rst -pg 1 -lvl 0 -x 0 -y 210 -defaultsOSRD
-preplace port port-id_sout -pg 1 -lvl 4 -x 790 -y 240 -defaultsOSRD
-preplace port port-id_LED_0 -pg 1 -lvl 4 -x 790 -y 90 -defaultsOSRD
-preplace inst tx_mod_0 -pg 1 -lvl 3 -x 640 -y 250 -defaultsOSRD
-preplace inst uart_loop_mod_0 -pg 1 -lvl 2 -x 360 -y 250 -defaultsOSRD
-preplace inst clk_divider_0 -pg 1 -lvl 1 -x 110 -y 200 -defaultsOSRD
-preplace inst constant_repeater_0 -pg 1 -lvl 3 -x 640 -y 80 -defaultsOSRD
-preplace netloc clk_divider_0_clk_div 1 1 2 200 350 500
-preplace netloc constant_repeater_0_data_out 1 1 3 230 140 520J 150 760
-preplace netloc constant_repeater_0_intr 1 1 3 210 10 NJ 10 770
-preplace netloc rst_0_1 1 0 3 20 270 210 360 520J
-preplace netloc tx_mod_0_sout 1 3 1 NJ 240
-preplace netloc tx_mod_0_xmitmt 1 1 3 220 150 510J 160 760
-preplace netloc uart_loop_mod_0_data_in 1 2 1 N 240
-preplace netloc uart_loop_mod_0_shift_load 1 2 1 490 260n
-preplace netloc sysclk_1 1 0 1 NJ 190
-levelinfo -pg 1 0 110 360 640 790
-pagesize -pg 1 -db -bbox -sgen -90 0 890 370
+preplace port port-id_sysclk -pg 1 -lvl 0 -x 0 -y 180 -defaultsOSRD
+preplace port port-id_rst -pg 1 -lvl 0 -x 0 -y 200 -defaultsOSRD
+preplace port port-id_sout -pg 1 -lvl 4 -x 1660 -y 210 -defaultsOSRD
+preplace port port-id_LED_0 -pg 1 -lvl 4 -x 1660 -y 290 -defaultsOSRD
+preplace port port-id_en -pg 1 -lvl 0 -x 0 -y 100 -defaultsOSRD
+preplace port port-id_LED_3 -pg 1 -lvl 4 -x 1660 -y 120 -defaultsOSRD
+preplace port port-id_ck_miso -pg 1 -lvl 0 -x 0 -y 120 -defaultsOSRD
+preplace port port-id_ck_ss -pg 1 -lvl 4 -x 1660 -y 100 -defaultsOSRD
+preplace port port-id_ck_sck -pg 1 -lvl 4 -x 1660 -y 80 -defaultsOSRD
+preplace port port-id_ck_mosi -pg 1 -lvl 4 -x 1660 -y 60 -defaultsOSRD
+preplace inst clk_divider_0 -pg 1 -lvl 1 -x 110 -y 190 -defaultsOSRD
+preplace inst UART -pg 1 -lvl 3 -x 1070 -y 228 -defaultsOSRD
+preplace inst SPI -pg 1 -lvl 2 -x 390 -y 92 -defaultsOSRD
+preplace inst UART|uart_loop_mod_0 -pg 1 -lvl 1 -x 1170 -y 278 -defaultsOSRD
+preplace inst UART|tx_mod_0 -pg 1 -lvl 2 -x 1430 -y 278 -defaultsOSRD
+preplace inst SPI|SPI_master_0 -pg 1 -lvl 2 -x 640 -y 132 -defaultsOSRD
+preplace inst SPI|xlconstant_0 -pg 1 -lvl 1 -x 430 -y 152 -defaultsOSRD
+preplace netloc SPI_master_0_MOSI 1 2 2 860J 60 NJ
+preplace netloc SPI_master_0_SCLK 1 2 2 880J 80 NJ
+preplace netloc SPI_master_0_SS 1 2 2 870J 70 1640J
+preplace netloc ck_miso_1 1 0 2 NJ 120 210J
+preplace netloc clk_divider_0_clk_div 1 1 2 230 262 860J
+preplace netloc en_0_1 1 0 4 NJ 100 200 272 890 118 1640J
+preplace netloc rst_1 1 0 4 20 110 220 282 870 418 1640J
+preplace netloc tx_mod_0_sout 1 3 1 1640J 210n
+preplace netloc sysclk_1 1 0 1 NJ 180
+preplace netloc SPI_master_0_data 1 2 1 870 162n
+preplace netloc UART|tx_mod_0_xmitmt 1 0 3 1040 388 NJ 388 1550
+preplace netloc UART|uart_loop_mod_0_data_in 1 1 1 N 268
+preplace netloc UART|uart_loop_mod_0_shift_load 1 1 1 1300 288n
+preplace netloc UART|clk_divider_0_clk_div 1 0 2 1030 178 1300
+preplace netloc UART|SPI_master_0_data 1 0 1 N 258
+preplace netloc UART|en_0_1 1 0 1 N 278
+preplace netloc UART|rst_1 1 0 2 1030 378 1310
+preplace netloc UART|tx_mod_0_sout 1 2 1 N 268
+preplace netloc SPI|xlconstant_0_dout 1 1 1 NJ 152
+preplace netloc SPI|clk_divider_0_clk_div 1 0 2 NJ 72 530
+preplace netloc SPI|rst_1 1 0 2 340J 82 520
+preplace netloc SPI|en_0_1 1 0 2 350J 92 510
+preplace netloc SPI|ck_miso_1 1 0 2 NJ 232 520
+preplace netloc SPI|SPI_master_0_MOSI 1 2 1 N 102
+preplace netloc SPI|SPI_master_0_SCLK 1 2 1 N 122
+preplace netloc SPI|SPI_master_0_SS 1 2 1 N 142
+preplace netloc SPI|SPI_master_0_data 1 2 1 N 162
+levelinfo -pg 1 0 110 390 1070 1660
+levelinfo -hier UART * 1170 1430 *
+levelinfo -hier SPI * 430 640 *
+pagesize -pg 1 -db -bbox -sgen -110 0 1770 430
+pagesize -hier UART -db -bbox -sgen 1000 168 1580 398
+pagesize -hier SPI -db -bbox -sgen 310 32 780 242
 "
 }
 0

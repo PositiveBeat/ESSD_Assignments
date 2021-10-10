@@ -1,49 +1,32 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xCFE4333CFA86FF2",
+      "boundary_crc": "0x4C00B237B142C915",
       "device": "xc7z020clg400-1",
-      "gen_directory": "../../../../As1_Group6.gen/sources_1/bd/design_1",
+      "gen_directory": "../../../../A1_G6.gen/sources_1/bd/design_1",
       "name": "design_1",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
       "synth_flow_mode": "Hierarchical",
-      "tool_version": "2021.1.1",
-      "validated": "true"
+      "tool_version": "2021.1.1"
     },
     "design_tree": {
-      "tx_mod_0": "",
-      "uart_loop_mod_0": "",
       "clk_divider_0": "",
-      "constant_repeater_0": ""
+      "UART": {
+        "uart_loop_mod_0": "",
+        "tx_mod_0": ""
+      },
+      "SPI": {
+        "SPI_master_0": "",
+        "xlconstant_0": ""
+      }
     },
     "ports": {
       "sysclk": {
         "type": "clk",
         "direction": "I",
         "parameters": {
-          "ASSOCIATED_RESET": {
-            "value": "rst",
-            "value_src": "default"
-          },
-          "CLK_DOMAIN": {
-            "value": "design_1_clk_0",
-            "value_src": "default"
-          },
           "FREQ_HZ": {
-            "value": "100000000",
-            "value_src": "default"
-          },
-          "FREQ_TOLERANCE_HZ": {
-            "value": "0",
-            "value_src": "default"
-          },
-          "INSERT_VIP": {
-            "value": "0",
-            "value_src": "default"
-          },
-          "PHASE": {
-            "value": "0.0",
-            "value_src": "default"
+            "value": "125000000"
           }
         }
       },
@@ -51,139 +34,38 @@
         "type": "rst",
         "direction": "I",
         "parameters": {
-          "INSERT_VIP": {
-            "value": "0",
-            "value_src": "default"
-          },
           "POLARITY": {
-            "value": "ACTIVE_LOW",
-            "value_src": "default"
+            "value": "ACTIVE_HIGH"
           }
         }
       },
       "sout": {
+        "type": "data",
         "direction": "O"
       },
       "LED_0": {
-        "type": "data",
-        "direction": "O",
-        "parameters": {
-          "LAYERED_METADATA": {
-            "value": "undef",
-            "value_src": "default"
-          }
-        }
+        "direction": "O"
+      },
+      "en": {
+        "direction": "I"
+      },
+      "LED_3": {
+        "direction": "O"
+      },
+      "ck_miso": {
+        "direction": "I"
+      },
+      "ck_ss": {
+        "direction": "O"
+      },
+      "ck_sck": {
+        "direction": "O"
+      },
+      "ck_mosi": {
+        "direction": "O"
       }
     },
     "components": {
-      "tx_mod_0": {
-        "vlnv": "xilinx.com:module_ref:tx_mod:1.0",
-        "xci_name": "design_1_tx_mod_0_0",
-        "xci_path": "ip\\design_1_tx_mod_0_0\\design_1_tx_mod_0_0.xci",
-        "inst_hier_path": "tx_mod_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "tx_mod",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clkfast": {
-            "direction": "I",
-            "parameters": {
-              "FREQ_HZ": {
-                "value": "100000000",
-                "value_src": "default_prop"
-              },
-              "PHASE": {
-                "value": "0.0",
-                "value_src": "default_prop"
-              },
-              "CLK_DOMAIN": {
-                "value": "design_1_clk_0",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "data_in": {
-            "direction": "I",
-            "left": "7",
-            "right": "0"
-          },
-          "rst": {
-            "type": "rst",
-            "direction": "I"
-          },
-          "shift_load": {
-            "direction": "I"
-          },
-          "sout": {
-            "direction": "O"
-          },
-          "xmitmt": {
-            "direction": "O"
-          }
-        }
-      },
-      "uart_loop_mod_0": {
-        "vlnv": "xilinx.com:module_ref:uart_loop_mod:1.0",
-        "xci_name": "design_1_uart_loop_mod_0_0",
-        "xci_path": "ip\\design_1_uart_loop_mod_0_0\\design_1_uart_loop_mod_0_0.xci",
-        "inst_hier_path": "uart_loop_mod_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "uart_loop_mod",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clkfast": {
-            "direction": "I",
-            "parameters": {
-              "FREQ_HZ": {
-                "value": "100000000",
-                "value_src": "default_prop"
-              },
-              "PHASE": {
-                "value": "0.0",
-                "value_src": "default_prop"
-              },
-              "CLK_DOMAIN": {
-                "value": "design_1_clk_0",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "data_out": {
-            "direction": "I",
-            "left": "7",
-            "right": "0"
-          },
-          "intr": {
-            "type": "intr",
-            "direction": "I",
-            "parameters": {
-              "SENSITIVITY": {
-                "value": "LEVEL_HIGH",
-                "value_src": "constant"
-              }
-            }
-          },
-          "rst": {
-            "type": "rst",
-            "direction": "I"
-          },
-          "xmitmt": {
-            "direction": "I"
-          },
-          "data_in": {
-            "direction": "O",
-            "left": "7",
-            "right": "0"
-          },
-          "shift_load": {
-            "direction": "O"
-          }
-        }
-      },
       "clk_divider_0": {
         "vlnv": "xilinx.com:module_ref:clk_divider:1.0",
         "xci_name": "design_1_clk_divider_0_0",
@@ -203,110 +85,415 @@
                 "value": "rst",
                 "value_src": "constant"
               },
+              "FREQ_HZ": {
+                "value": "125000000",
+                "value_src": "user_prop"
+              },
               "CLK_DOMAIN": {
-                "value": "design_1_clk_0",
+                "value": "design_1_sysclk",
                 "value_src": "default_prop"
               }
             }
           },
           "rst": {
             "type": "rst",
-            "direction": "I"
-          },
-          "clk_div": {
-            "direction": "O",
+            "direction": "I",
             "parameters": {
-              "FREQ_HZ": {
-                "value": "100000000",
-                "value_src": "default_prop"
+              "POLARITY": {
+                "value": "ACTIVE_HIGH",
+                "value_src": "user_prop"
               },
-              "PHASE": {
-                "value": "0.0",
-                "value_src": "default_prop"
-              },
-              "CLK_DOMAIN": {
-                "value": "design_1_clk_0",
+              "PortWidth": {
+                "value": "1",
                 "value_src": "default_prop"
               }
             }
+          },
+          "clk_div": {
+            "direction": "O"
           }
         }
       },
-      "constant_repeater_0": {
-        "vlnv": "xilinx.com:module_ref:constant_repeater:1.0",
-        "xci_name": "design_1_constant_repeater_0_0",
-        "xci_path": "ip\\design_1_constant_repeater_0_0\\design_1_constant_repeater_0_0.xci",
-        "inst_hier_path": "constant_repeater_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "constant_repeater",
-          "boundary_crc": "0x0"
-        },
+      "UART": {
         "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "FREQ_HZ": {
-                "value": "100000000",
-                "value_src": "default_prop"
-              },
-              "PHASE": {
-                "value": "0.0",
-                "value_src": "default_prop"
-              },
-              "CLK_DOMAIN": {
-                "value": "design_1_clk_0",
-                "value_src": "default_prop"
-              }
-            }
+          "clkfast": {
+            "direction": "I"
           },
           "data_out": {
-            "direction": "O",
+            "direction": "I",
             "left": "7",
             "right": "0"
           },
-          "intr": {
-            "type": "intr",
-            "direction": "O",
-            "parameters": {
-              "SENSITIVITY": {
-                "value": "LEVEL_HIGH",
-                "value_src": "constant"
+          "en": {
+            "direction": "I"
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "sout": {
+            "direction": "O"
+          }
+        },
+        "components": {
+          "uart_loop_mod_0": {
+            "vlnv": "xilinx.com:module_ref:uart_loop_mod:1.0",
+            "xci_name": "design_1_uart_loop_mod_0_0",
+            "xci_path": "ip\\design_1_uart_loop_mod_0_0\\design_1_uart_loop_mod_0_0.xci",
+            "inst_hier_path": "UART/uart_loop_mod_0",
+            "reference_info": {
+              "ref_type": "hdl",
+              "ref_name": "uart_loop_mod",
+              "boundary_crc": "0x0"
+            },
+            "ports": {
+              "clkfast": {
+                "direction": "I"
+              },
+              "data_out": {
+                "direction": "I",
+                "left": "7",
+                "right": "0"
+              },
+              "intr": {
+                "type": "intr",
+                "direction": "I",
+                "parameters": {
+                  "SENSITIVITY": {
+                    "value": "LEVEL_HIGH",
+                    "value_src": "constant"
+                  },
+                  "PortWidth": {
+                    "value": "1",
+                    "value_src": "default_prop"
+                  }
+                }
+              },
+              "rst": {
+                "type": "rst",
+                "direction": "I",
+                "parameters": {
+                  "POLARITY": {
+                    "value": "ACTIVE_HIGH",
+                    "value_src": "user_prop"
+                  },
+                  "PortWidth": {
+                    "value": "1",
+                    "value_src": "default_prop"
+                  }
+                }
+              },
+              "xmitmt": {
+                "direction": "I"
+              },
+              "data_in": {
+                "direction": "O",
+                "left": "7",
+                "right": "0"
+              },
+              "shift_load": {
+                "direction": "O"
               }
             }
+          },
+          "tx_mod_0": {
+            "vlnv": "xilinx.com:module_ref:tx_mod:1.0",
+            "xci_name": "design_1_tx_mod_0_0",
+            "xci_path": "ip\\design_1_tx_mod_0_0\\design_1_tx_mod_0_0.xci",
+            "inst_hier_path": "UART/tx_mod_0",
+            "reference_info": {
+              "ref_type": "hdl",
+              "ref_name": "tx_mod",
+              "boundary_crc": "0x0"
+            },
+            "ports": {
+              "clkfast": {
+                "direction": "I"
+              },
+              "data_in": {
+                "direction": "I",
+                "left": "7",
+                "right": "0"
+              },
+              "rst": {
+                "type": "rst",
+                "direction": "I"
+              },
+              "shift_load": {
+                "direction": "I"
+              },
+              "sout": {
+                "direction": "O"
+              },
+              "xmitmt": {
+                "direction": "O"
+              }
+            }
+          }
+        },
+        "nets": {
+          "SPI_master_0_data": {
+            "ports": [
+              "data_out",
+              "uart_loop_mod_0/data_out"
+            ]
+          },
+          "clk_divider_0_clk_div": {
+            "ports": [
+              "clkfast",
+              "uart_loop_mod_0/clkfast",
+              "tx_mod_0/clkfast"
+            ]
+          },
+          "en_0_1": {
+            "ports": [
+              "en",
+              "uart_loop_mod_0/intr"
+            ]
+          },
+          "rst_1": {
+            "ports": [
+              "rst",
+              "uart_loop_mod_0/rst",
+              "tx_mod_0/rst"
+            ]
+          },
+          "tx_mod_0_sout": {
+            "ports": [
+              "tx_mod_0/sout",
+              "sout"
+            ]
+          },
+          "tx_mod_0_xmitmt": {
+            "ports": [
+              "tx_mod_0/xmitmt",
+              "uart_loop_mod_0/xmitmt"
+            ]
+          },
+          "uart_loop_mod_0_data_in": {
+            "ports": [
+              "uart_loop_mod_0/data_in",
+              "tx_mod_0/data_in"
+            ]
+          },
+          "uart_loop_mod_0_shift_load": {
+            "ports": [
+              "uart_loop_mod_0/shift_load",
+              "tx_mod_0/shift_load"
+            ]
+          }
+        }
+      },
+      "SPI": {
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "en": {
+            "direction": "I"
+          },
+          "ck_miso": {
+            "direction": "I"
+          },
+          "ck_mosi": {
+            "direction": "O"
+          },
+          "ck_sck": {
+            "direction": "O"
+          },
+          "ck_ss": {
+            "direction": "O"
+          },
+          "data": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          }
+        },
+        "components": {
+          "SPI_master_0": {
+            "vlnv": "xilinx.com:module_ref:SPI_master:1.0",
+            "xci_name": "design_1_SPI_master_0_1",
+            "xci_path": "ip\\design_1_SPI_master_0_1\\design_1_SPI_master_0_1.xci",
+            "inst_hier_path": "SPI/SPI_master_0",
+            "reference_info": {
+              "ref_type": "hdl",
+              "ref_name": "SPI_master",
+              "boundary_crc": "0x0"
+            },
+            "ports": {
+              "clk": {
+                "type": "clk",
+                "direction": "I",
+                "parameters": {
+                  "ASSOCIATED_RESET": {
+                    "value": "rst",
+                    "value_src": "constant"
+                  }
+                }
+              },
+              "rst": {
+                "type": "rst",
+                "direction": "I"
+              },
+              "en": {
+                "direction": "I"
+              },
+              "addr": {
+                "direction": "I",
+                "left": "7",
+                "right": "0"
+              },
+              "MISO": {
+                "direction": "I"
+              },
+              "MOSI": {
+                "direction": "O"
+              },
+              "SCLK": {
+                "direction": "O"
+              },
+              "SS": {
+                "direction": "O"
+              },
+              "data": {
+                "direction": "O",
+                "left": "7",
+                "right": "0"
+              }
+            }
+          },
+          "xlconstant_0": {
+            "vlnv": "xilinx.com:ip:xlconstant:1.1",
+            "xci_name": "design_1_xlconstant_0_0",
+            "xci_path": "ip\\design_1_xlconstant_0_0\\design_1_xlconstant_0_0.xci",
+            "inst_hier_path": "SPI/xlconstant_0",
+            "parameters": {
+              "CONST_VAL": {
+                "value": "51"
+              },
+              "CONST_WIDTH": {
+                "value": "8"
+              }
+            }
+          }
+        },
+        "nets": {
+          "SPI_master_0_MOSI": {
+            "ports": [
+              "SPI_master_0/MOSI",
+              "ck_mosi"
+            ]
+          },
+          "SPI_master_0_SCLK": {
+            "ports": [
+              "SPI_master_0/SCLK",
+              "ck_sck"
+            ]
+          },
+          "SPI_master_0_SS": {
+            "ports": [
+              "SPI_master_0/SS",
+              "ck_ss"
+            ]
+          },
+          "SPI_master_0_data": {
+            "ports": [
+              "SPI_master_0/data",
+              "data"
+            ]
+          },
+          "ck_miso_1": {
+            "ports": [
+              "ck_miso",
+              "SPI_master_0/MISO"
+            ]
+          },
+          "clk_divider_0_clk_div": {
+            "ports": [
+              "clk",
+              "SPI_master_0/clk"
+            ]
+          },
+          "en_0_1": {
+            "ports": [
+              "en",
+              "SPI_master_0/en"
+            ]
+          },
+          "rst_1": {
+            "ports": [
+              "rst",
+              "SPI_master_0/rst"
+            ]
+          },
+          "xlconstant_0_dout": {
+            "ports": [
+              "xlconstant_0/dout",
+              "SPI_master_0/addr"
+            ]
           }
         }
       }
     },
     "nets": {
+      "SPI_master_0_MOSI": {
+        "ports": [
+          "SPI/ck_mosi",
+          "ck_mosi"
+        ]
+      },
+      "SPI_master_0_SCLK": {
+        "ports": [
+          "SPI/ck_sck",
+          "ck_sck"
+        ]
+      },
+      "SPI_master_0_SS": {
+        "ports": [
+          "SPI/ck_ss",
+          "ck_ss"
+        ]
+      },
+      "SPI_master_0_data": {
+        "ports": [
+          "SPI/data",
+          "UART/data_out"
+        ]
+      },
+      "ck_miso_1": {
+        "ports": [
+          "ck_miso",
+          "SPI/ck_miso"
+        ]
+      },
       "clk_divider_0_clk_div": {
         "ports": [
           "clk_divider_0/clk_div",
-          "tx_mod_0/clkfast",
-          "uart_loop_mod_0/clkfast",
-          "constant_repeater_0/clk"
+          "UART/clkfast",
+          "SPI/clk"
         ]
       },
-      "constant_repeater_0_data_out": {
+      "en_0_1": {
         "ports": [
-          "constant_repeater_0/data_out",
-          "uart_loop_mod_0/data_out"
+          "en",
+          "LED_3",
+          "UART/en",
+          "SPI/en"
         ]
       },
-      "constant_repeater_0_intr": {
-        "ports": [
-          "constant_repeater_0/intr",
-          "uart_loop_mod_0/intr",
-          "LED_0"
-        ]
-      },
-      "rst_0_1": {
+      "rst_1": {
         "ports": [
           "rst",
-          "tx_mod_0/rst",
-          "uart_loop_mod_0/rst",
-          "clk_divider_0/rst"
+          "clk_divider_0/rst",
+          "LED_0",
+          "UART/rst",
+          "SPI/rst"
         ]
       },
       "sysclk_1": {
@@ -317,26 +504,8 @@
       },
       "tx_mod_0_sout": {
         "ports": [
-          "tx_mod_0/sout",
+          "UART/sout",
           "sout"
-        ]
-      },
-      "tx_mod_0_xmitmt": {
-        "ports": [
-          "tx_mod_0/xmitmt",
-          "uart_loop_mod_0/xmitmt"
-        ]
-      },
-      "uart_loop_mod_0_data_in": {
-        "ports": [
-          "uart_loop_mod_0/data_in",
-          "tx_mod_0/data_in"
-        ]
-      },
-      "uart_loop_mod_0_shift_load": {
-        "ports": [
-          "uart_loop_mod_0/shift_load",
-          "tx_mod_0/shift_load"
         ]
       }
     }
