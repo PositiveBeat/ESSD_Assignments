@@ -50,6 +50,10 @@ begin
          current_state <= s0;
          -- Reset Values
          count <= (others=>'0');
+         SCLK <= '0';
+         MOSI <= '0';
+         SS <= '1';
+         
       ELSIF (clk'EVENT AND clk = '1') THEN
          current_state <= next_state;
 
@@ -57,6 +61,9 @@ begin
          CASE current_state IS
          WHEN s0 =>
             count <= (others=>'0');
+            SCLK <= '0';
+            MOSI <= '0';
+            SS <= '1';
 
 
 
